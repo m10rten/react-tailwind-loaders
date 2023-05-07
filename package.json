@@ -4,9 +4,6 @@
   "description": "React.js loaders build with TailwindCSS, usable in any react or next application with tailwindcss.",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "watch": "tsc -w",
