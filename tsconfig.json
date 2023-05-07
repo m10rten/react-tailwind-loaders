@@ -22,7 +22,7 @@
     // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
     // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
     /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
+    "module": "ESNext" /* Specify what module code is generated. */,
     "rootDir": "./" /* Specify the root folder within your source files. */,
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./" /* Specify the base directory to resolve non-relative module names. */,
@@ -55,7 +55,7 @@
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
     "removeComments": true /* Disable emitting comments. */,
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
-    // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
+    "importHelpers": true /* Allow importing helper functions from tslib once per project, instead of including them per-file. */,
     // "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types. */
     // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
     // "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
@@ -100,12 +100,12 @@
     "skipDefaultLibCheck": true /* Skip type checking .d.ts files that are included with TypeScript. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "lib": ["dom", "dom.iterable", "esnext"],
-    "noEmit": true,
+    "noEmit": false,
     "incremental": true,
     "moduleResolution": "node",
     "isolatedModules": true,
     "plugins": []
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
