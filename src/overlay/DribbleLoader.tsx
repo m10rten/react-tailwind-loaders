@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
  */
 export default function FullScreenLoader({
   delay = 800,
-  fadeTime = 300,
   count = 3,
   background = "bg-slate-300",
   foreground = "bg-gray-600",
@@ -34,7 +33,7 @@ export default function FullScreenLoader({
     setFadeOut(true);
     setTimeout(() => {
       setLoading(false);
-    }, fadeTime);
+    }, 300);
   };
   const doLoad = () => {
     setTimeout(() => {
@@ -56,7 +55,7 @@ export default function FullScreenLoader({
     <div
       className={`${
         fadeOut ? "opacity-0" : "opacity-100"
-      } dribble_loader ${className} ${background} !duration-${`[${fadeTime}]`}`}>
+      } dribble_loader ${className} ${background}`}>
       {[...Array(waves)].map((_, i) => (
         <span
           key={i}

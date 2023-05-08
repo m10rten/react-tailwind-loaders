@@ -15,7 +15,6 @@ export default function DribbleLoaderPage() {
         // background="bg-slate-900"
         // foreground="bg-cyan-400"
         delay={12000}
-        fadeTime={700}
         forceUpdate={state}
         count={4}
         // childClassName="rounded-full !w-16"
