@@ -1,4 +1,4 @@
-import { DribbleLoader } from "react-tailwind-loaders";
+import { DribbleLoader } from "../../../../src";
 
 export default function DribbleLoaderPage() {
   return (
