@@ -43,6 +43,7 @@ export default function FullScreenLoader({
     doLoad();
   }, []);
   useEffect(() => {
+    if (!forceUpdate) return;
     setLoading(true);
     setFadeOut(false);
     doLoad();
