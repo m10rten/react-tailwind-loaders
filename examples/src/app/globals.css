@@ -15,6 +15,12 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+.dribble_loader {
+  background-color: slategray;
+}
+.wave {
+  background-color: aqua;
+}
 
 body {
   color: rgb(var(--foreground-rgb));

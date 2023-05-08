@@ -1,9 +1,9 @@
-import { DribbleLoader } from "../../../../src";
+import { DribbleLoader } from "react-tailwind-loaders";
 
 export default function DribbleLoaderPage() {
   return (
     <>
-      <DribbleLoader />
+      <DribbleLoader delay={1000} />
       <h1>DribbleLoaderPage</h1>
     </>
   );
