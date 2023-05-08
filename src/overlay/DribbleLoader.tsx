@@ -48,9 +48,7 @@ export default function FullScreenLoader({
     setFadeOut(false);
     doLoad();
   }, [forceUpdate]);
-  if (count < 1) count = 1;
-  if (count > 10) count = 10;
-  const waves = count;
+  const waves = Math.min(1, Math.max(10, count));
   return loading ? (
     <div
       className={`${
