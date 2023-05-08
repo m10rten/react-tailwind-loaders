@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 // import "../styles/overlay/DribbleLoader.scss";
 
-const fadeTimings = [75, 100, 150, 200, 300, 500, 700, 1000] as const;
-
 /**
  * To edit the styles, pass a className prop
  *
@@ -13,7 +11,7 @@ const fadeTimings = [75, 100, 150, 200, 300, 500, 700, 1000] as const;
  */
 export default function FullScreenLoader({
   delay = 800,
-  fadeTime = fadeTimings[4], // 300
+  fadeTime = 300,
   count = 3,
   background = "bg-slate-300",
   foreground = "bg-gray-600",
@@ -22,7 +20,7 @@ export default function FullScreenLoader({
   forceUpdate = false,
 }: {
   delay?: number;
-  fadeTime?: (typeof fadeTimings)[number];
+  fadeTime?: number;
   count?: number;
   childClassName?: string;
   background?: string;
@@ -58,9 +56,7 @@ export default function FullScreenLoader({
     <div
       className={`${
         fadeOut ? "opacity-0" : "opacity-100"
-      } dribble_loader ${className} ${background} duration-[] !duration-${
-        fadeTimings.includes(fadeTime) ? fadeTime : `[${fadeTime}]`
-      }`}>
+      } dribble_loader ${className} ${background} !duration-${`[${fadeTime}]`}`}>
       {[...Array(waves)].map((_, i) => (
         <span
           key={i}
