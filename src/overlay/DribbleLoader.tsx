@@ -12,9 +12,21 @@ import { useEffect, useState } from "react";
 export default function FullScreenLoader({
   delay = 800,
   fadeTime = 200,
+  count = 3,
   background = "bg-slate-300",
   foreground = "bg-gray-600",
   className = "",
+  childClassName = "",
+  forceUpdate = false,
+}: {
+  delay?: number;
+  fadeTime?: number;
+  count?: number;
+  childClassName?: string;
+  background?: string;
+  foreground?: string;
+  className?: string;
+  forceUpdate?: boolean;
 }) {
   const [loading, setLoading] = useState<boolean>(true);
   const [fadeOut, setFadeOut] = useState<boolean>(false);
@@ -26,14 +38,25 @@ export default function FullScreenLoader({
       }, fadeTime);
     }, delay);
   }, []);
-  const waves = 3;
+  useEffect(() => {
+    setLoading(true);
+  }, [forceUpdate]);
+  if (count < 1) count = 1;
+  if (count > 10) count = 10;
+  const waves = count;
   return loading ? (
     <div
       className={`${
         fadeOut ? "opacity-0" : "opacity-100"
-      } dribble_loader ${className} ${background}`}>
+      } dribble_loader ${className} ${background} duration-${
+        fadeTime.toString().length === 3 ? fadeTime : `[${fadeTime}]`
+      }`}>
       {[...Array(waves)].map((_, i) => (
-        <span key={i} className={`wave ${foreground}`} data-key={i} />
+        <span
+          key={i}
+          className={`wave ${foreground} ${childClassName}`}
+          data-key={i}
+        />
       ))}
     </div>
   ) : null;
