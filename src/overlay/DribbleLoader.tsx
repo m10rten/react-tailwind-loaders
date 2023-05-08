@@ -30,16 +30,24 @@ export default function FullScreenLoader({
 }) {
   const [loading, setLoading] = useState<boolean>(true);
   const [fadeOut, setFadeOut] = useState<boolean>(false);
-  useEffect(() => {
+  const doFade = () => {
+    setFadeOut(true);
     setTimeout(() => {
-      setFadeOut(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, fadeTime);
+      setLoading(false);
+    }, fadeTime);
+  };
+  const doLoad = () => {
+    setTimeout(() => {
+      doFade();
     }, delay);
+  };
+  useEffect(() => {
+    doLoad();
   }, []);
   useEffect(() => {
     setLoading(true);
+    setFadeOut(false);
+    doLoad();
   }, [forceUpdate]);
   if (count < 1) count = 1;
   if (count > 10) count = 10;
