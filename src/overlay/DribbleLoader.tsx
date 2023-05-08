@@ -19,7 +19,6 @@ export default function FullScreenLoader({
   forceUpdate = false,
 }: {
   delay?: number;
-  fadeTime?: number;
   count?: number;
   childClassName?: string;
   background?: string;
@@ -55,7 +54,7 @@ export default function FullScreenLoader({
     <div
       className={`${
         fadeOut ? "opacity-0" : "opacity-100"
-      } dribble_loader ${className} ${background}`}>
+      } dribble_loader ${background} ${className}`}>
       {[...Array(waves)].map((_, i) => (
         <span
           key={i}
