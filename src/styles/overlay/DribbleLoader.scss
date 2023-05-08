@@ -1,0 +1,25 @@
+.dribble_loader {
+  @apply transition-opacity duration-300 flex flex-row gap-1 items-center justify-center h-screen absolute w-screen z-[9999] top-0 left-0 bottom-0 right-0;
+  .wave {
+    @apply w-12 h-12 rounded-full;
+
+    animation: wave 1s ease-in-out infinite;
+    @for $i from 1 through 10 {
+      &[data-key="#{$i}"] {
+        animation-delay: 0.05 * $i + s;
+      }
+    }
+
+    @keyframes wave {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+  }
+}
