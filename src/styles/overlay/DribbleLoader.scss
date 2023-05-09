@@ -1,5 +1,5 @@
 .dribble_loader {
-  @apply transition-opacity duration-300 flex flex-row gap-1 items-center justify-center h-screen absolute w-screen z-[9999] top-0 left-0 bottom-0 right-0;
+  @apply transition-opacity duration-300 flex flex-row gap-1 items-center justify-center h-screen fixed w-screen z-[9999] top-0 left-0 bottom-0 right-0;
   .wave {
     @apply w-12 h-12;
 
