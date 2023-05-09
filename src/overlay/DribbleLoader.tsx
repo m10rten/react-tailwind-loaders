@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-// import "../styles/overlay/DribbleLoader.scss";
 
 /**
  * To edit the styles, pass a className prop
