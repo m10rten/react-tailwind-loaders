@@ -1,6 +1,6 @@
 {
   "name": "react-tailwind-loaders",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "React.js loaders build with TailwindCSS, usable in any react or next application with tailwindcss.",
   "main": "./dist/index.js",
   "scripts": {
