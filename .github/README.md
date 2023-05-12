@@ -69,7 +69,7 @@ function MyComponent() {
 
 The `InlineSpinner` component is a React component that provides an animated spinner that can be used inline with text or other elements. It has several customizable props that allow you to configure its appearance and behavior.
 
-## Props
+### Props
 
 The following props are available for configuring the `InlineSpinner` component:
 
@@ -78,11 +78,11 @@ The following props are available for configuring the `InlineSpinner` component:
 | --- | --- | --- | --- |
 | `thumbColor` | string | `"text-indigo-600"` | Sets the color of the spinner's thumb. |
 | `trackColor` | string | `"text-gray-900"` | Sets the color of the spinner's track. |
-| `speed` | number (0.5 - 10) | `1` | Sets the speed of the spinner's animation. |
+| `speed` | number (0.5 - 5) | `1` | Sets the speed of the spinner's animation. |
 | `className` | string | `""` | Sets the CSS class name for the spinner. |
 | `size` | `"small"`, `"medium"`, `"large"` | `"medium"` | Sets the size of the spinner. |
 
-## Example Usage
+### Example Usage
 
 To use the `InlineSpinner` component in your React application, simply import it and add it to your JSX code with the desired props:
 
@@ -104,13 +104,47 @@ function MyComponent() {
 }
 ```
 
+## SkeletenLoader
+
+The `SkeletenLoader` component is a React component that provides a customizable skeleton loader for various types of content, including images, text, cards, videos, and avatars. It has two customizable props that allow you to specify the type of content and the CSS class name for styling.
+
+### Props
+
+The following props are available for configuring the `SkeletenLoader` component:
+
+<!-- prettier-ignore -->
+| Prop Name | Type | Default Value  | Description |
+| --- | --- | --- | --- |
+| `type` - `required` | `"image"`, `"text"`, `"card"`, `"video"`, or `"avatar"` | - | Sets the type of content for the skeleton loader. |
+| `className` | string | `""` | Sets the CSS class name for the skeleton loader. |
+
+### Example Usage
+
+To use the `SkeletenLoader` component in your React application, simply import it and add it to your JSX code with the desired props:
+
+```jsx
+import { SkeletenLoader } from "react-tailwind-loaders";
+
+function MyComponent() {
+  return (
+    <div className="flex flex-wrap">
+      <SkeletenLoader type="video" className="mx-2" />
+      <SkeletenLoader type="text" className="h-4 mx-2 max-w-xs" />
+      <SkeletenLoader type="image" className="mx-2" />
+      <SkeletenLoader type="avatar" className="mx-2" />
+      <SkeletenLoader type="card" className="mx-2" />
+    </div>
+  );
+}
+```
+
 ## Security 🛡️
 
-To ensure that the `react-tailwind-loaders` package is safe to use in your project, we have taken the following measures to ensure that it is secure:
+We've taken the following measures to ensure that the `react-tailwind-loaders` package is secure for your project:
 
-- The Dependabot security bot is enabled to automatically update the package's dependencies when a security vulnerability is detected.
-- The package's source code is linted and formatted with ESLint and Prettier to ensure that it is free of security vulnerabilities and code smells.
-- No outside dependencies are used in the package's source code outside from the development dependencies.
+- Dependabot is enabled to automatically update the package's dependencies in case of any security vulnerabilities.
+- ESLint and Prettier are used to lint and format the package's source code to ensure it is free of security vulnerabilities and code smells.
+- The package does not rely on any external dependencies outside of its development dependencies.
 - The package's source code is open-source and available for anyone to view and contribute to.
-- The package's source code is licensed under the MIT license, which allows for the package to be used in any project, including commercial projects.
-- The Github project deploys to NPM so it is 1 to 1 with the source code and cannot be tampered with.
+- The package is licensed under the permissive MIT license, allowing it to be used in any project, including commercial ones.
+- The package is deployed to NPM directly from the Github repository, ensuring that the source code is always synchronized and cannot be tampered with.
