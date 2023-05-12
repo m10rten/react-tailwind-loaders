@@ -103,3 +103,14 @@ function MyComponent() {
   );
 }
 ```
+
+## Security 🛡️
+
+To ensure that the `react-tailwind-loaders` package is safe to use in your project, we have taken the following measures to ensure that it is secure:
+
+- The Dependabot security bot is enabled to automatically update the package's dependencies when a security vulnerability is detected.
+- The package's source code is linted and formatted with ESLint and Prettier to ensure that it is free of security vulnerabilities and code smells.
+- No outside dependencies are used in the package's source code outside from the development dependencies.
+- The package's source code is open-source and available for anyone to view and contribute to.
+- The package's source code is licensed under the MIT license, which allows for the package to be used in any project, including commercial projects.
+- The Github project deploys to NPM so it is 1 to 1 with the source code and cannot be tampered with.

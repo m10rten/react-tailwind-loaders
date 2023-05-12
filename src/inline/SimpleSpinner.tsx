@@ -1,5 +1,33 @@
 "use client";
-
+export const spinnerSizes = [
+  "extra-small",
+  "small",
+  "medium-small",
+  "medium",
+  "medium-large",
+  "large",
+  "extra-large",
+] as const;
+const convertSize = (size: (typeof spinnerSizes)[number]) => {
+  switch (size) {
+    case "extra-small":
+      return "w-1 h-1";
+    case "small":
+      return "w-2 h-2";
+    case "medium-small":
+      return "w-3 h-3";
+    case "medium":
+      return "w-4 h-4";
+    case "medium-large":
+      return "w-5 h-5";
+    case "large":
+      return "w-6 h-6";
+    case "extra-large":
+      return "w-8 h-8";
+    default:
+      return "w-4 h-4";
+  }
+};
 export default function InlineSpinner({
   thumbColor = "text-indigo-600",
   trackColor = "text-gray-900",
@@ -11,15 +39,15 @@ export default function InlineSpinner({
   trackColor?: string;
   speed?: number;
   className?: string;
-  size?: "small" | "medium" | "large";
+  size?: (typeof spinnerSizes)[number];
 }) {
   return (
     <svg
       aria-hidden="true"
       role="status"
-      className={`inline border-none bg-none touch-none ${
-        size === "small" ? "w-2 h-2" : size === "large" ? "w-6 h-6" : "w-4 h-4"
-      } mr-2 animate-spin ${className}`}
+      className={`inline border-none bg-none touch-none ${convertSize(
+        size,
+      )} mr-2 animate-spin ${className}`}
       style={{ animationDuration: `${Math.max(0.5, Math.min(10, speed))}s` }}
       viewBox="0 0 100 101"
       fill="none"
