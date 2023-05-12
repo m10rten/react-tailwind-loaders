@@ -15,6 +15,7 @@ export default function FullScreenLoader({
   foreground = "bg-gray-600",
   className = "",
   childClassName = "",
+  speed = 1,
   forceUpdate = false,
 }: {
   delay?: number;
@@ -23,6 +24,7 @@ export default function FullScreenLoader({
   background?: string;
   foreground?: string;
   className?: string;
+  speed?: number;
   forceUpdate?: boolean;
 }) {
   const [loading, setLoading] = useState<boolean>(true);
@@ -57,6 +59,9 @@ export default function FullScreenLoader({
         <span
           key={i}
           className={`wave ${foreground} ${childClassName}`}
+          style={{
+            animationDuration: `${Math.max(0.5, Math.min(5, speed))}s`,
+          }}
           data-key={i}
         />
       ))}
