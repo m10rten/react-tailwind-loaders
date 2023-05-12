@@ -39,6 +39,7 @@ The following props are available for configuring the `DribbleLoader` component:
 | `count` | number | `3` | Sets the number of dots in the loader. |
 | `className` | string | `""` | Sets the CSS class name for the loader. |
 | `childClassName` | string | `""` | Sets the CSS class name for the dots in the loader. |
+| `speed` | number (0.5 - 5) | `1` | Sets the speed of the loader's animation. |
 
 ### Example Usage
 
