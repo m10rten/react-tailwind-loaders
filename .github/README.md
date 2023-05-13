@@ -105,13 +105,13 @@ function MyComponent() {
 }
 ```
 
-## SkeletenLoader
+## SkeletonLoader
 
-The `SkeletenLoader` component is a React component that provides a customizable skeleton loader for various types of content, including images, text, cards, videos, and avatars. It has two customizable props that allow you to specify the type of content and the CSS class name for styling.
+The `SkeletonCard` component is a React component that provides a customizable skeleton loader for various types of content, including images, text, cards, videos, and avatars. It has two customizable props that allow you to specify the type of content and the CSS class name for styling.
 
 ### Props
 
-The following props are available for configuring the `SkeletenLoader` component:
+The following props are available for configuring the `SkeletonCard` component:
 
 <!-- prettier-ignore -->
 | Prop Name | Type | Default Value  | Description |
@@ -124,16 +124,16 @@ The following props are available for configuring the `SkeletenLoader` component
 To use the `SkeletenLoader` component in your React application, simply import it and add it to your JSX code with the desired props:
 
 ```jsx
-import { SkeletenLoader } from "react-tailwind-loaders";
+import { SkeletonCard } from "react-tailwind-loaders";
 
 function MyComponent() {
   return (
     <div className="flex flex-wrap">
-      <SkeletenLoader type="video" className="mx-2" />
-      <SkeletenLoader type="text" className="h-4 mx-2 max-w-xs" />
-      <SkeletenLoader type="image" className="mx-2" />
-      <SkeletenLoader type="avatar" className="mx-2" />
-      <SkeletenLoader type="card" className="mx-2" />
+      <SkeletonCard type="video" className="mx-2" />
+      <SkeletonCard type="text" className="h-4 mx-2 max-w-xs" />
+      <SkeletonCard type="image" className="mx-2" />
+      <SkeletonCard type="avatar" className="mx-2" />
+      <SkeletonCard type="card" className="mx-2" />
     </div>
   );
 }
